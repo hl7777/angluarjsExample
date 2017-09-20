@@ -1,0 +1,21 @@
+﻿<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>name</td>
+            <td>action</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="product in products">
+            <td>
+                <span ng-if="!product.isEdit" ng-click="active(product)">{{product.name}}</span>
+                <input id="product{{product.id}}" ng-if="product.isEdit" ng-model="product.name" 
+                       ng-blur="blur(product)"  />
+            </td>
+            <td>
+                <button class="btn btn-primary btn-sm" ng-click="delete({product:product})" >Delete</button>
+                <button class="btn btn-primary btn-sm" ng-click="edit(product)">{{editProduct['p'+product.id].btnText}}</button>
+            </td>            
+        </tr>
+    </tbody>
+</table>

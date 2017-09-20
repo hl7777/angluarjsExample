@@ -1,0 +1,13 @@
+﻿<div class="col-md-5" ng-controller="productController" ng-init="init()">
+    <h1>{{id}}</h1>
+    <form name="form" class="form-inline" novalidate>
+        <div class="form-group">
+            <label class="control-label"></label>
+            <input type="text" class="form-control" ng-model="name" required />
+            <button class="btn btn-primary" ng-click="add()" ng-disabled="form.$invalid" ng-class="{'disabled':form.$invalid}">Add</button>
+            <p class="help-block">Example block-level help text here.</p>
+        </div>
+    </form>
+
+    <product-table products="products" delete="delete(product)"></product-table>
+</div>
